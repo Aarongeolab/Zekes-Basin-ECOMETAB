@@ -4,7 +4,3 @@ This study estimates values of **net** **ecosystem** **metabolism** **(NEM)**, *
 ## Study Site And Data Source
 
 ### Study Site
-- **Reserve Site**: Zekes Island Reserve, New Hanover County, North Carolina between August-December 2024
-- **Characteristics**: Zekes Basin 
-
-### Data Source
