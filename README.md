@@ -24,7 +24,7 @@ Net ecosystem metabolism (NEM), gross primary production (Pg), and total respira
 ### Data Availability & Limitations
  
 - The analysis window begins 1/22/2022 rather than 1/1/2022. Pulling the full 1/1/2022–1/1/2023 range from the Cardinal export system would have exceeded available data export credits, so the record was trimmed to the period with reliable overlapping meteorological and water quality data.
-- 2022 as the study year given it has the most complete in-situ water quality data at Zeke's Basin in previous 5 years. Note considerable gap in September due to hurricane, and room for investigation regarding interpolating w/ remotely sensed products.
+- 2022 as the study year given it has the most complete in-situ water quality data at Zeke's Basin in previous 5 years. Note considerable gap in September due to hurricane, and room for investigation regarding interpolating w/ remote sensing products.
 - Values for Sep 2022 period are currently missing (possibly due to Hurricane Ian) rather than interpolated.
 ## Data Citation
  
