@@ -6,10 +6,10 @@ Continuous water quality data (temperature, salinity, dissolved oxygen, depth) w
  
 Zeke's Basin sits within the Zeke's Island component of the North Carolina National Estuarine Research Reserve system, in the lower Cape Fear River Estuary adjacent to Kure Beach, NC. Since the last natural oceanic inlet was closed via the rock jetty, water in the Basin no longer exchanges directly with the Atlantic Ocean, extending residence time and reducing mixing significantly. Zeke's Basin water quality is now driven almost entirely by the lower Cape Fear River Estuary, which carries agricultural, industrial, and wastewater discharge inputs (NCNERR Site Profile, Ch. 5). This makes the Basin a useful case study for detecting river-driven water quality change before it reaches the Atlantic Ocean, and broader impacts of hard structures in estuaries on biogeochemical processes.
  
-Several site-specific characteristics:
+Site specific characteristics:
  
 - Restricted flushing: cut off from tidal ocean exchange, the Basin is more vulnerable to nutrient accumulation and eutrophication than sites with an open inlet.
-- Shallow, wind-exposed water column of less than 2m depth causes resuspension of sediment and subsequent turbid water, limiting light and thereby primary production.
+- Shallow, wind exposed water column of less than 2m depth causes resuspension of sediment and subsequent turbid water, limiting light and thereby primary production.
 - Elevated hypoxia risk: shallow, poorly flushed systems with high organic loading are predisposed to low dissolved-oxygen events, which GPP/Rt/NEM metabolism estimates are well suited to detect and track over time.
 ### Meteorological Data
  
