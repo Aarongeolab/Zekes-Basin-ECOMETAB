@@ -34,5 +34,5 @@ Water quality and meteorological data used in this analysis were provided by the
  
 ## License
  
-Code and analysis in this repository are licensed under the **MIT License**. Underlying NOAA/NERRS SWMP data are U.S. federal public data; NERRS site where data were collected to be fully acknowledged in any use.
+Code and analysis in this repository are licensed under the MIT License. Underlying NOAA/NERRS SWMP data are U.S. federal public data; NERRS site where data were collected to be fully acknowledged in any use.
  
