@@ -70,7 +70,7 @@ $$NEM = Pg - Rt$$
 
 ### Annual Trophic Balance
 
-Despite significant organic loading and agricultural runoff entering from the lower Cape Fear River, Zeke’s Basin functions near an overall annual trophic balance, with daily $NEM$ values oscillating tightly around $0 \text{ mmol O}_2 \cdot \text{m}^{-2} \cdot \text{d}^{-1}$ (typically ranging within $[-100, +100] \text{ mmol O}_2 \cdot \text{m}^{-2} \cdot \text{d}^{-1}$). In this restricted, poorly flushed system, metabolic conditions rapidly alternate between short-lived periods of net autotrophy ($NEM > 0$) and net heterotrophy ($NEM < 0$).
+Despite significant organic loading and agricultural runoff entering from the lower Cape Fear River, Zeke’s Basin functions near an overall annual trophic balance, with daily $NEM$ values oscillating tightly around $0 \text{ mmol O}_2 \cdot \text{m}^{-2} \cdot \text{d}^{-1}$ (typically ranging within $[-100, +100] \text{ mmol O}_2 \cdot \text{m}^{-2} \cdot \text{d}^{-1}$). In this restricted, poorly flushed system, metabolic conditions rapidly alternate between short-lived periods of net autotrophy ($NEM > 0$) and net heterotrophy ($NEM < 0$). It appears significant production and respiration occur, and offset one another when integrated over space and time.
 
 ### Seasonal Dynamics & Organic Carbon Cycling
 
