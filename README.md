@@ -46,12 +46,14 @@ The mean nighttime rate ($\overline{R}_{\text{hourly, night}}$) is assumed const
 $$Rt = \left( \overline{R}_{\text{hourly, night}} \times 24 \right) \times H$$
 
 ### 4. Gross Primary Production ($P_g$)
+
 Daytime production at each interval corrects the observed change in daytime DO for diffusion and baseline dark respiration:
+
 $$P_{\text{hourly, day}} = \left(\frac{dC}{dt}\right)_{\text{day}} - D_{\text{day}} + \overline{R}_{\text{hourly, night}}$$
 
 Summing across all daylight intervals yields the integrated daily areal production rate:
-$$Pg = \left( \sum_{\text{sunrise}}^{\text{sunset}} P_{\text{hourly, day}} \right) \times H$$
 
+$$Pg = \left( \sum_{\text{sunrise}}^{\text{sunset}} P_{\text{hourly, day}} \right) \times H$$
 ### 5. Net Ecosystem Metabolism (NEM)
 The daily integrated net metabolic balance is computed directly as:
 $$NEM = Pg - Rt$$
