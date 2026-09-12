@@ -16,10 +16,9 @@ Continuous in-situ water quality and nutrient data were collected at Zeke's Basi
 - Air pressure: Retrieved from Wilmington International Airport (ILM), ~20 mi from study site, via Iowa Environmental Mesonet ASOS-AWOS-METAR data export system. Notably, historical sea level pressure data is sparse; however has less spatial variability than wind speed/air temp.
 ## Methods
  
-Net ecosystem metabolism (NEM), gross primary production (Pg), and total respiration (Rt) were calculated using the `ecometab` function from the `SWMPr` R package (called from Python via `rpy2`). `ecometab` implements the Odum open-water method. It employs the diel pattern of dissolved oxygen, corrected for air-water gas exchange (via wind speed and barometric pressure) and site-specific solar day length (from latitude/longitude/timezone), to partition net O2 flux into daytime production and nighttime respiration values. 
+Net ecosystem metabolism (NEM), gross primary production (Pg), and total respiration (Rt) were calculated using the `ecometab` function from the `SWMPr` R package (called from Python via `rpy2`). `ecometab` implements the Odum open-water method. It employs the diel pattern of dissolved oxygen, corrected for air-water gas exchange (via wind speed and barometric pressure) and site-specific solar day length (from latitude/longitude/timezone), to partition net O2 flux into daytime production and nighttime respiration values. Equations listed below.
 
-**Equations below**
-# 1. Dissolved Oxygen Mass Balance
+### 1. Dissolved Oxygen Mass Balance
 $$\frac{dC}{dt} = P_g - R_t + D$$
 
 *   $C$: Dissolved oxygen concentration ($mg \cdot L^{-1}$ or $mmol \cdot m^{-3}$)
@@ -27,7 +26,7 @@ $$\frac{dC}{dt} = P_g - R_t + D$$
 *   $R_t$: Volumetric hourly ecosystem respiration rate ($mg \cdot L^{-1} \cdot hr^{-1}$)
 *   $D$: Volumetric hourly air-water gas exchange (diffusion) flux ($mg \cdot L^{-1} \cdot hr^{-1}$)
 
-# 2. Air-Water Gas Exchange (Diffusion)
+### 2. Air-Water Gas Exchange (Diffusion)
 The gas exchange at each time step is determined by the oxygen deficit gradient and a temperature-corrected volumetric reaeration coefficient:
 $$D = k(C_s - C)$$
 $$k = k_{20} \cdot \theta^{(T - 20)}$$
@@ -36,21 +35,21 @@ $$k = k_{20} \cdot \theta^{(T - 20)}$$
 *   $k$: Volumetric reaeration coefficient ($hr^{-1}$) adjusted for water temperature $T$ ($^\circ\text{C}$)
 *   $\theta$: Empirical temperature correction constant (defaults to $1.0241$)
 
-# 3. Daily Ecosystem Respiration ($R_t$)
+### 3. Daily Ecosystem Respiration ($R_t$)
 Since photosynthesis ceases during dark hours ($P_g = 0$), the hourly respiration rate is calculated strictly within site-specific astronomical night windows determined by coordinates (`lat` / `long`):
 $$R_{\text{hourly, night}} = D_{\text{night}} - \left(\frac{dC}{dt}\right)_{\text{night}}$$
 
 The mean nighttime rate ($\overline{R}_{\text{hourly, night}}$) is assumed constant over the 24-hour cycle and scaled by the daily mean depth ($H$) to output total areal consumption:
 $$Rt = \left( \overline{R}_{\text{hourly, night}} \times 24 \right) \times H$$
 
-# 4. Gross Primary Production ($P_g$)
+### 4. Gross Primary Production ($P_g$)
 Daytime production at each interval corrects the observed change in daytime DO for diffusion and baseline dark respiration:
 $$P_{\text{hourly, day}} = \left(\frac{dC}{dt}\right)_{\text{day}} - D_{\text{day}} + \overline{R}_{\text{hourly, night}}$$
 
 Summing across all daylight intervals yields the integrated daily areal production rate:
 $$Pg = \left( \sum_{\text{sunrise}}^{\text{sunset}} P_{\text{hourly, day}} \right) \times H$$
 
-# 5. Net Ecosystem Metabolism (NEM)
+### 5. Net Ecosystem Metabolism (NEM)
 The ultimate daily integrated net metabolic balance is computed directly as:
 $$NEM = Pg - Rt$$
 
