@@ -66,11 +66,26 @@ $$NEM = Pg - Rt$$
 - **Timezone**: `America/New_York`
 - **Units**: `mmol O2/m^2/day`
 
-### Data Availability & Limitations
- 
-- The analysis window begins 1/22/2022 rather than 1/1/2022. Pulling the full 1/1/2022–1/1/2023 range from the Cardinal export system would have exceeded available data export credits, so the record was trimmed to the period with reliable overlapping meteorological and water quality data.
-- 2022 as the study year given it has the most complete in-situ water quality data at Zeke's Basin in previous 5 years. Note considerable gap in September due to hurricane, and room for investigation regarding interpolating w/ remote sensing products.
-- Values for Sep 2022 period are currently missing (possibly due to Hurricane Ian) rather than interpolated.
+## Results & Discussion
+
+### Annual Trophic Balance
+
+Despite significant organic loading and agricultural runoff entering from the lower Cape Fear River, Zeke’s Basin functions near an overall annual trophic balance, with daily $NEM$ values oscillating tightly around $0 \text{ mmol O}_2 \cdot \text{m}^{-2} \cdot \text{d}^{-1}$ (typically ranging within $[-100, +100] \text{ mmol O}_2 \cdot \text{m}^{-2} \cdot \text{d}^{-1}$). In this restricted, poorly flushed system, metabolic conditions rapidly alternate between short-lived periods of net autotrophy ($NEM > 0$) and net heterotrophy ($NEM < 0$).
+
+### Seasonal Dynamics & Organic Carbon Cycling
+
+Metabolic rates exhibit pronounced seasonality driven by thermal and radiative forcing:
+
+- **Summer Peak (June–August)**: Highest daily flux magnitudes and variance occur during summer, driven by elevated water temperatures and maximum solar irradiance. Photosynthetic production ($P_g$) peaks near $+800 \text{ mmol O}_2 \cdot \text{m}^{-2} \cdot \text{d}^{-1}$, while total respiration ($R_t$) drops to $-1000 \text{ mmol O}_2 \cdot \text{m}^{-2} \cdot \text{d}^{-1}$.
+- **Coupling of Production & Respiration**: High $P_g$ pulses are rapidly offset by proportional increases in respiration ($R_t$). Photosynthetically derived organic matter, alongside incoming riverine carbon inputs, is rapidly consumed or decomposed locally rather than stored within the basin, reinforcing the system's susceptibility to short-term hypoxia during warm, low-wind conditions.
+
+### Data Artifacts & Model Performance
+
+- **Analysis Window**: The analysis begins on January 22, 2022 rather than January 1, 2022. The full January 1, 2022–January 1, 2023 meteorological record could not be retrieved from the Cardinal export system without exceeding available data export credits. Therefore, the analysis was restricted to the period with reliable overlapping meteorological and water quality observations.
+- **Study-Year Selection**: 2022 was selected because it provided the most complete in-situ water quality record at Zeke’s Basin within the preceding five years. However, the incomplete record means that the results should be interpreted as representative of the available 2022 observation period rather than a fully continuous annual metabolic budget.
+- **Temporal Gaps**: A considerable data gap occurs during September 2022, coinciding with regional hurricane activity, including Hurricane Ian. Values for this period are currently treated as missing rather than interpolated. This gap limits interpretation of late-summer to early-fall metabolic dynamics and represents an opportunity for future investigation using remote sensing products to characterize conditions during periods without in-situ observations.
+- **Diel Model Artifacts**: Occasional unphysical estimates—such as negative $P_g$ values (dipping to $-300 \text{ mmol O}_2 \cdot \text{m}^{-2} \cdot \text{d}^{-1}$) or positive $R_t$ rates—are standard artifacts of single-station open-water diel oxygen modeling. In a shallow ($<2\text{ m}$), wind-exposed, tide-restricted water column, these anomalous outputs typically originate from wind-driven resuspension, high atmospheric gas reaeration fluxes, or local advective transport during high-turbulence events.
+
 ## Data Citation
  
 Water quality and meteorological data used in this analysis were provided by the National Estuarine Research Reserve System (NERRS). Per NERRS/CDMO citation guidance, this dataset is cited as:
