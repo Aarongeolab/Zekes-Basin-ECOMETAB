@@ -6,7 +6,7 @@ Site specific characteristics:
  
 - Restricted flushing: cut off from tidal ocean exchange, the Basin is more vulnerable to nutrient accumulation and eutrophication than sites with an open inlet.
 - Shallow, wind exposed water column of less than 2m depth causes resuspension of sediment and subsequent turbid water, limiting light and thereby primary production.
-- Elevated hypoxia risk: shallow, poorly flushed systems with high organic loading are predisposed to dissolved oxygen saturation below 30%, which GPP/Rt/NEM metabolism estimates are equipped to detect and track over time.
+- Elevated hypoxia risk: shallow, poorly flushed systems with high organic loading are predisposed to dissolved oxygen saturation below 30%, which GPP/Rt/NEM metabolism estimates track over time.
 
 Continuous in-situ water quality and nutrient data were collected at Zeke's Basin and retrieved via the NCNERR System Wide Monitoring Program (SWMP), using the `SWMPr` R package.
 
