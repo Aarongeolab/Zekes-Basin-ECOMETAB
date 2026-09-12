@@ -31,12 +31,12 @@ The gas exchange at each time step is determined by the oxygen deficit gradient 
 $$D = k(C_s - C)$$
 $$k = k_{20} \cdot \theta^{(T - 20)}$$
 
-*   $C_s$: Dissolved oxygen concentration at $100\%$ saturation calculated dynamically from salinity ($sal$) and water temperature ($temp$)
+*   $C_s$: Dissolved oxygen concentration at 100 percent saturation calculated from salinity  and water temperature
 *   $k$: Volumetric reaeration coefficient ($hr^{-1}$) adjusted for water temperature $T$ ($^\circ\text{C}$)
 *   $\theta$: Empirical temperature correction constant (defaults to $1.0241$)
 
 ### 3. Daily Ecosystem Respiration ($R_t$)
-Since photosynthesis ceases during dark hours ($P_g = 0$), the hourly respiration rate is calculated strictly within site-specific astronomical night windows determined by coordinates (`lat` / `long`):
+Since organisms cannot photosynthesize during dark hours ($P_g = 0$), the hourly respiration rate is calculated strictly within study area nighttime windows determined by coordinates:  (`33.954680, -77.934807`)
 $$R_{\text{hourly, night}} = D_{\text{night}} - \left(\frac{dC}{dt}\right)_{\text{night}}$$
 
 The mean nighttime rate ($\overline{R}_{\text{hourly, night}}$) is assumed constant over the 24-hour cycle and scaled by the daily mean depth ($H$) to output total areal consumption:
@@ -50,7 +50,7 @@ Summing across all daylight intervals yields the integrated daily areal producti
 $$Pg = \left( \sum_{\text{sunrise}}^{\text{sunset}} P_{\text{hourly, day}} \right) \times H$$
 
 ### 5. Net Ecosystem Metabolism (NEM)
-The ultimate daily integrated net metabolic balance is computed directly as:
+The daily integrated net metabolic balance is computed directly as:
 $$NEM = Pg - Rt$$
 
 *   **Pg**: Gross Primary Production ($mmol \cdot O_2 \cdot m^{-2} \cdot d^{-1}$)
