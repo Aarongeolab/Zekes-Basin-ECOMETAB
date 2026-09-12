@@ -1,6 +1,6 @@
 ### Quantifying Seasonal Ecosystem Metabolism of Zeke’s Island Reserve, North Carolina
  
-Zeke's Basin sits within the Zeke's Island component of the North Carolina National Estuarine Research Reserve system, in the lower Cape Fear River Estuary adjacent to Kure Beach, NC. Closure of the New Inlet caused water throughout Zeke's Island Reserve to no longer exchange directly with the Atlantic Ocean, extending residence time, reducing mixing, and increasing sedimentation. Zeke's Basin water quality is now driven almost entirely by the lower Cape Fear River, which carries agricultural, industrial, and wastewater discharge inputs (NCNERR Site Profile). As a result, Zeke’s Basin provides a unique case study for elucidating river-driven changes on estuarine water quality within a restricted system. Quantifying biogeochemical processes, in this case net ecosystem metabolism (NEM), as a result of the difference between gross primary productivity (GPP) and total respiration (Rt) reveals the broader influence of water quality variability on seasonal estuarine ecosystem function.
+Zeke's Basin sits within the Zeke's Island component of the North Carolina National Estuarine Research Reserve system, in the lower Cape Fear River Estuary adjacent to Kure Beach, NC. Closure of the New Inlet caused water throughout Zeke's Island Reserve to no longer exchange directly with the Atlantic Ocean, extending residence time, reducing mixing, and increasing sedimentation. Zeke's Basin water quality is now driven almost entirely by the lower Cape Fear River, which carries agricultural, industrial, and wastewater discharge inputs (NCNERR Site Profile). As a result, Zeke’s Basin provides a unique case study for elucidating river-driven changes on estuarine water quality within a restricted system. Quantifying biogeochemical processes, in this case net ecosystem metabolism (NEM), as a result of the difference between gross primary productivity (GPP) and total respiration (Rt) reveals the broader influence of water quality variability on seasonal estuarine ecosystem function. This study enacts this calculation using the NERR SWMP `ecometab` package (Beck, 2016).
  
 Site specific characteristics:
  
@@ -16,7 +16,7 @@ Continuous in-situ water quality and nutrient data were collected at Zeke's Basi
 - Air pressure: Retrieved from Wilmington International Airport (ILM), ~20 mi from study site, via Iowa Environmental Mesonet ASOS-AWOS-METAR data export system. Notably, historical sea level pressure data is sparse; however has less spatial variability than wind speed/air temp.
 ## Methods
  
-Net ecosystem metabolism (NEM), gross primary production (Pg), and total respiration (Rt) were calculated using the `ecometab` function from the `SWMPr` R package (called from Python via `rpy2`). `ecometab` implements the Odum open-water method. It employs the diel pattern of dissolved oxygen, corrected for air-water gas exchange (via wind speed and barometric pressure) and site-specific solar day length (from latitude/longitude/timezone), to partition net O2 flux into daytime production and nighttime respiration values. Equations listed below.
+Net ecosystem metabolism (NEM), gross primary production (Pg), and total respiration (Rt) were calculated using the `ecometab` function from the `SWMPr` R package (called from Python via `rpy2`). `ecometab` implements the Odum open-water method (Odum, 1956). It employs the diel pattern of dissolved oxygen, corrected for air-water gas exchange (via wind speed and barometric pressure) and site-specific solar day length (from latitude/longitude/timezone), to partition net O2 flux into daytime production and nighttime respiration values. Equations listed below.
 
 ### 1. Dissolved Oxygen Mass Balance
 $$\frac{dC}{dt} = P_g - R_t + D$$
@@ -26,8 +26,8 @@ $$\frac{dC}{dt} = P_g - R_t + D$$
 *   $R_t$: Volumetric hourly ecosystem respiration rate ($mg \cdot L^{-1} \cdot hr^{-1}$)
 *   $D$: Volumetric hourly air-water gas exchange (diffusion) flux ($mg \cdot L^{-1} \cdot hr^{-1}$)
 
-### 2. Air-Water Gas Exchange (Diffusion)
-The gas exchange at each time step is determined by the oxygen deficit gradient and a temperature-corrected volumetric reaeration coefficient:
+### 2. Air-Water Gas Exchange - Atmospheric Diffusion
+The gas exchange at each time step is determined by the oxygen deficit gradient and a temperature-corrected volumetric reaeration coefficient (Caffrey, 2004):
 $$D = k(C_s - C)$$
 $$k = k_{20} \cdot \theta^{(T - 20)}$$
 
