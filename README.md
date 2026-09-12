@@ -1,4 +1,4 @@
-### Quantifying Seasonal Ecosystem Metabolism in Zeke’s Island Reserve, North Carolina
+### Quantifying Seasonal Ecosystem Metabolism of Zeke’s Island Reserve, North Carolina
  
 Zeke's Basin sits within the Zeke's Island component of the North Carolina National Estuarine Research Reserve system, in the lower Cape Fear River Estuary adjacent to Kure Beach, NC. Closure of the New Inlet caused water throughout Zeke's Island Reserve to no longer exchange directly with the Atlantic Ocean, extending residence time, reducing mixing, and increasing sedimentation. Zeke's Basin water quality is now driven almost entirely by the lower Cape Fear River, which carries agricultural, industrial, and wastewater discharge inputs (NCNERR Site Profile). As a result, Zeke’s Basin provides a unique case study for elucidating river-driven changes on estuarine water quality within a restricted system. Quantifying biogeochemical processes such as net ecosystem metabolism, gross primary productivity, and respiration reveals the broader influence of water quality variability on seasonal ecosystem function.
  
