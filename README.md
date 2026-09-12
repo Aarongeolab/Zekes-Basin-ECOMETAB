@@ -76,6 +76,10 @@ $$NEM = Pg - Rt$$
 Water quality and meteorological data used in this analysis were provided by the National Estuarine Research Reserve System (NERRS). Per NERRS/CDMO citation guidance, this dataset is cited as:
  
 > NOAA National Estuarine Research Reserve System (NERRS). System-wide Monitoring Program. Data accessed from the NOAA NERRS Centralized Data Management Office website: http://www.nerrsdata.org; accessed 1/16/2025. doi:10.25921/vw8a-8031
+
+* **Caffrey (2004)** - Factors controlling net ecosystem metabolism in U.S. estuaries. *Estuaries*, 27(1), 90–101.
+* **Beck (2016)** - SWMPr: An R Package for Retrieving, Organizing, and Analyzing Environmental Data for Estuaries. *The R Journal*, 8(1), 219–232.
+* **Odum (1956)** - Primary Production in Flowing Waters. *Limnology and Oceanography*, 1(2), 102–117.
  
 ## License
  
