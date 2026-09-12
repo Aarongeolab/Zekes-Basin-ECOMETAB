@@ -16,11 +16,52 @@ Continuous in-situ water quality and nutrient data were collected at Zeke's Basi
 - Air pressure: Retrieved from Wilmington International Airport (ILM), ~20 mi from study site, via Iowa Environmental Mesonet ASOS-AWOS-METAR data export system. Notably, historical sea level pressure data is sparse; however has less spatial variability than wind speed/air temp.
 ## Methods
  
-Net ecosystem metabolism (NEM), gross primary production (Pg), and total respiration (Rt) were calculated using the `ecometab` function from the `SWMPr` R package (called from Python via `rpy2`). `ecometab` implements the Odum open-water method. It employs the diel pattern of dissolved oxygen, corrected for air-water gas exchange (via wind speed and barometric pressure) and site-specific solar day length (from latitude/longitude/timezone), to partition net O2 flux into daytime production and nighttime respiration values. Site coordinates, timezone, and metabolism units below:
+Net ecosystem metabolism (NEM), gross primary production (Pg), and total respiration (Rt) were calculated using the `ecometab` function from the `SWMPr` R package (called from Python via `rpy2`). `ecometab` implements the Odum open-water method. It employs the diel pattern of dissolved oxygen, corrected for air-water gas exchange (via wind speed and barometric pressure) and site-specific solar day length (from latitude/longitude/timezone), to partition net O2 flux into daytime production and nighttime respiration values. 
+
+**Equations below**
+# 1. Dissolved Oxygen Mass Balance
+$$\frac{dC}{dt} = P_g - R_t + D$$
+
+*   $C$: Dissolved oxygen concentration ($mg \cdot L^{-1}$ or $mmol \cdot m^{-3}$)
+*   $P_g$: Volumetric hourly gross primary production rate ($mg \cdot L^{-1} \cdot hr^{-1}$)
+*   $R_t$: Volumetric hourly ecosystem respiration rate ($mg \cdot L^{-1} \cdot hr^{-1}$)
+*   $D$: Volumetric hourly air-water gas exchange (diffusion) flux ($mg \cdot L^{-1} \cdot hr^{-1}$)
+
+# 2. Air-Water Gas Exchange (Diffusion)
+The gas exchange at each time step is determined by the oxygen deficit gradient and a temperature-corrected volumetric reaeration coefficient:
+$$D = k(C_s - C)$$
+$$k = k_{20} \cdot \theta^{(T - 20)}$$
+
+*   $C_s$: Dissolved oxygen concentration at $100\%$ saturation calculated dynamically from salinity ($sal$) and water temperature ($temp$)
+*   $k$: Volumetric reaeration coefficient ($hr^{-1}$) adjusted for water temperature $T$ ($^\circ\text{C}$)
+*   $\theta$: Empirical temperature correction constant (defaults to $1.0241$)
+
+# 3. Daily Ecosystem Respiration ($R_t$)
+Since photosynthesis ceases during dark hours ($P_g = 0$), the hourly respiration rate is calculated strictly within site-specific astronomical night windows determined by coordinates (`lat` / `long`):
+$$R_{\text{hourly, night}} = D_{\text{night}} - \left(\frac{dC}{dt}\right)_{\text{night}}$$
+
+The mean nighttime rate ($\overline{R}_{\text{hourly, night}}$) is assumed constant over the 24-hour cycle and scaled by the daily mean depth ($H$) to output total areal consumption:
+$$Rt = \left( \overline{R}_{\text{hourly, night}} \times 24 \right) \times H$$
+
+# 4. Gross Primary Production ($P_g$)
+Daytime production at each interval corrects the observed change in daytime DO for diffusion and baseline dark respiration:
+$$P_{\text{hourly, day}} = \left(\frac{dC}{dt}\right)_{\text{day}} - D_{\text{day}} + \overline{R}_{\text{hourly, night}}$$
+
+Summing across all daylight intervals yields the integrated daily areal production rate:
+$$Pg = \left( \sum_{\text{sunrise}}^{\text{sunset}} P_{\text{hourly, day}} \right) \times H$$
+
+# 5. Net Ecosystem Metabolism (NEM)
+The ultimate daily integrated net metabolic balance is computed directly as:
+$$NEM = Pg - Rt$$
+
+*   **Pg**: Gross Primary Production ($mmol \cdot O_2 \cdot m^{-2} \cdot d^{-1}$)
+*   **Rt**: Total Ecosystem Respiration ($mmol \cdot O_2 \cdot m^{-2} \cdot d^{-1}$)
+*   **NEM**: Net Ecosystem Metabolism ($mmol \cdot O_2 \cdot m^{-2} \cdot d^{-1}$) 
  
 - **Latitude / Longitude**: `33.954680, -77.934807`
 - **Timezone**: `America/New_York`
 - **Units**: `mmol O2/m^2/day`
+
 ### Data Availability & Limitations
  
 - The analysis window begins 1/22/2022 rather than 1/1/2022. Pulling the full 1/1/2022–1/1/2023 range from the Cardinal export system would have exceeded available data export credits, so the record was trimmed to the period with reliable overlapping meteorological and water quality data.
