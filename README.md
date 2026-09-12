@@ -36,10 +36,13 @@ $$k = k_{20} \cdot \theta^{(T - 20)}$$
 *   $\theta$: Empirical temperature correction constant (defaults to $1.0241$)
 
 ### 3. Daily Ecosystem Respiration ($R_t$)
-Since organisms cannot photosynthesize during dark hours ($P_g = 0$), the hourly respiration rate is calculated strictly within study area nighttime windows determined by coordinates:  (`33.954680, -77.934807`)
+
+Since organisms cannot photosynthesize without sunlight ($P_g = 0$), the hourly respiration rate is calculated within study area nighttime windows determined by coordinates (`33.954680, -77.934807`) and `America/New_York` timezone:
+
 $$R_{\text{hourly, night}} = D_{\text{night}} - \left(\frac{dC}{dt}\right)_{\text{night}}$$
 
 The mean nighttime rate ($\overline{R}_{\text{hourly, night}}$) is assumed constant over the 24-hour cycle and scaled by the daily mean depth ($H$) to output total areal consumption:
+
 $$Rt = \left( \overline{R}_{\text{hourly, night}} \times 24 \right) \times H$$
 
 ### 4. Gross Primary Production ($P_g$)
