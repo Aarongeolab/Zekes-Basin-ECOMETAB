@@ -1,14 +1,4 @@
 ### Quantifying Seasonal Ecosystem Metabolism of Zeke’s Island Reserve, North Carolina
- 
-Zeke's Basin sits within the Zeke's Island component of the North Carolina National Estuarine Research Reserve system, in the lower Cape Fear River Estuary adjacent to Kure Beach, NC. Closure of the New Inlet caused water throughout Zeke's Island Reserve to no longer exchange directly with the Atlantic Ocean, extending residence time, reducing mixing, and increasing sedimentation. Zeke's Basin water quality is now driven almost entirely by the lower Cape Fear River, which carries agricultural, industrial, and wastewater discharge inputs (NCNERR Site Profile, 2008). As a result, Zeke’s Basin provides a unique case study for elucidating river-driven changes on estuarine water quality within a restricted system. Quantifying biogeochemical processes, in this case net ecosystem metabolism (NEM), as a result of the difference between gross primary productivity (GPP) and total respiration (Rt) reveals the broader influence of water quality variability on seasonal estuarine ecosystem function. This study enacts this calculation using the NERR SWMP `ecometab` package (Beck, 2016).
- 
-Site specific characteristics:
- 
-- Restricted flushing: cut off from tidal ocean exchange, the Basin is more vulnerable to nutrient accumulation and eutrophication than sites with an open inlet.
-- Shallow, wind exposed water column of less than 2m depth causes resuspension of sediment and subsequent turbid water, limiting light and thereby primary production.
-- Elevated hypoxia risk: shallow, poorly flushed systems with high organic loading are predisposed to dissolved oxygen saturation below 30%, which GPP/Rt/NEM metabolism estimates track over time.
-
-Continuous in-situ water quality and nutrient data were collected at Zeke's Basin and retrieved via the NCNERR System Wide Monitoring Program (SWMP), using the `SWMPr` R package.
 
 ### Meteorological Data
  
@@ -99,5 +89,5 @@ Water quality and meteorological data used in this analysis were provided by the
  
 ## License
  
-Code and analysis in this repository are licensed under the MIT License. NOAA/NERRS SWMP data are U.S. federal public data; NERRS site where data were collected to be fully acknowledged in any use.
+Code and analysis in this repository are licensed under the MIT License. NOAA/NERRS SWMP data are U.S. federal public data; NERRS site where data were collected to be fully acknowledged in any use. 
  
