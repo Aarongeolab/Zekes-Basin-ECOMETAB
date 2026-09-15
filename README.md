@@ -2,8 +2,8 @@
 
 ### Meteorological Data
  
-- Wind speed & air temperature: Retrieved from Brunswick County Airport, ~8.2 mi from study site, via NC State Climate Office CRONOS/Cardinal data export system.
-- Air pressure: Retrieved from Wilmington International Airport (ILM), ~20 mi from study site, via Iowa Environmental Mesonet ASOS-AWOS-METAR data export system. Notably, historical sea level pressure data is sparse; however has less spatial variability than wind speed/air temp.
+- Wind speed & air temperature: Retrieved from Brunswick County Airport, ~8.2 mi from study site, via NC State Climate Office CRONOS/Cardinal data export system. 
+- Air pressure: Retrieved from Wilmington International Airport (ILM), ~20 mi from study site, via Iowa Environmental Mesonet ASOS-AWOS-METAR data export system. Notably, historical sea level pressure public data for this study site is sparse; however as a physical driver of water quality this parameter exhibits less spatial variability than wind speed/air temp.
 ## Methods
  
 Net ecosystem metabolism (NEM), gross primary production (GPP), and total respiration (Rt) were calculated using the `ecometab` function from the `SWMPr` R package (called from Python via `rpy2`). `ecometab` implements the Odum open-water method (Odum, 1956). It employs the diel pattern of dissolved oxygen, corrected for air-water gas exchange (via wind speed and barometric pressure) and site-specific solar day length (from latitude/longitude/timezone), to partition net O2 flux into daytime production and nighttime respiration values.
@@ -61,7 +61,7 @@ $$NEM = Pg - Rt$$
 
 ### Annual Trophic Balance
 
-Despite significant organic loading and agricultural runoff entering from the lower Cape Fear River, Zeke’s Basin functions near an overall annual trophic balance, with daily $NEM$ values oscillating tightly around $0 \text{ mmol O}_2 \cdot \text{m}^{-2} \cdot \text{d}^{-1}$ (typically ranging within $[-100, +100] \text{ mmol O}_2 \cdot \text{m}^{-2} \cdot \text{d}^{-1}$). In this restricted, poorly flushed system, metabolic conditions rapidly alternate between short-lived periods of net autotrophy ($NEM > 0$) and net heterotrophy ($NEM < 0$). It appears significant production and respiration occur, and offset one another when integrated over space and time.
+Despite significant organic loading and agricultural runoff entering from the lower Cape Fear River, Zeke’s Basin functions near an overall annual trophic balance, with daily $NEM$ values oscillating tightly around $0 \text{ mmol O}_2 \cdot \text{m}^{-2} \cdot \text{d}^{-1}$ (typically ranging within $[-100, +100] \text{ mmol O}_2 \cdot \text{m}^{-2} \cdot \text{d}^{-1}$). In this restricted, poorly flushed system, metabolic conditions rapidly alternate between short-lived periods of net autotrophy ($NEM > 0$) and net heterotrophy ($NEM < 0$). It appears significant production and respiration occur, and offset one another when integrated over space and time. 
 
 ### Seasonal Dynamics & Carbon Cycling
 
@@ -72,8 +72,8 @@ Metabolic rates exhibit pronounced seasonality driven by thermal and radiative f
 
 ###  Limitations
 
-- **Analysis Window**: The analysis begins on January 22, 2022 rather than January 1, 2022. The full January 1, 2022–January 1, 2023 meteorological record could not be retrieved from the Cardinal export system without exceeding available data export credits. Therefore, the analysis was restricted to the period with reliable overlapping meteorological and water quality observations.
-- **Study-Year Selection**: 2022 was selected because it provided the most complete in-situ water quality record at Zeke’s Basin within the preceding five years. However, the incomplete record means that the results should be interpreted as representative of the available 2022 observation period rather than a fully continuous annual metabolic budget.
+- **Analysis Window**: The analysis begins on January 22, 2022 rather than January 1, 2022. The full January 1, 2022–January 1, 2023 meteorological record could not be retrieved from the Cardinal export system without exceeding available data export credits. Therefore, the analysis was restricted to the period with reliable overlapping meteorological and water quality observations. Proximity of atmospheric pressure to study site is a limitation given climatological variability of Zeke's Basin. 
+- **Study-Year Selection**: 2022 was selected because it provided the most complete in-situ water quality record at Zeke’s Basin within the preceding five years. However, the incomplete record means that the results should be interpreted as representative of the available 2022 observation period rather than a fully continuous annual metabolic budget. 
 - **Temporal Gaps**: A considerable data gap occurs during September 2022, coinciding with regional hurricane activity, including Hurricane Ian. Values for this period are currently treated as missing rather than interpolated. This gap limits interpretation of late-summer to early-fall metabolic dynamics and represents an opportunity for future investigation using remote sensing products to characterize conditions during periods without in-situ observations.
 - **Diel Model **: Occasional unphysical estimates such as negative $P_g$ values (dipping to $-300 \text{ mmol O}_2 \cdot \text{m}^{-2} \cdot \text{d}^{-1}$) or positive $R_t$ rates are artifacts of in-situ station open-water diel oxygen modeling. In a shallow ($<2\text{ m}$), wind-exposed, tide and flushing restricted water column; these anomalous outputs typically originate from wind driven resuspension and or high atmospheric gas reaeration fluxes.
 
