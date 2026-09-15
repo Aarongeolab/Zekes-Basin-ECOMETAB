@@ -77,10 +77,10 @@ Despite significant organic loading and agricultural runoff entering from the lo
 
 Metabolic rates exhibit pronounced seasonality driven by thermal and radiative forcing:
 
-- **Summer Peak (June–August)**: Highest daily flux magnitudes and variance occur during summer, driven by elevated water temperatures and maximum solar irradiance. Photosynthetic production ($P_g$) peaks near $+800 \text{ mmol O}_2 \cdot \text{m}^{-2} \cdot \text{d}^{-1}$, while total respiration ($R_t$) drops to $-1000 \text{ mmol O}_2 \cdot \text{m}^{-2} \cdot \text{d}^{-1}$.
+- **Summer**: Highest daily flux magnitudes and variance occur during summer, driven by elevated water temperatures and maximum solar irradiance. Photosynthetic production ($P_g$) peaks near $+800 \text{ mmol O}_2 \cdot \text{m}^{-2} \cdot \text{d}^{-1}$, while total respiration ($R_t$) drops to $-1000 \text{ mmol O}_2 \cdot \text{m}^{-2} \cdot \text{d}^{-1}$.
 - **Coupling of Production & Respiration**: High $P_g$ pulses are rapidly offset by proportional increases in respiration ($R_t$). Photosynthetically derived organic matter, alongside incoming riverine carbon inputs, is rapidly consumed or decomposed locally rather than stored within the basin, reinforcing the system's susceptibility to short-term hypoxia during warm, low-wind conditions.
 
-### Model Performance & Temporal Limitations
+###  Limitations
 
 - **Analysis Window**: The analysis begins on January 22, 2022 rather than January 1, 2022. The full January 1, 2022–January 1, 2023 meteorological record could not be retrieved from the Cardinal export system without exceeding available data export credits. Therefore, the analysis was restricted to the period with reliable overlapping meteorological and water quality observations.
 - **Study-Year Selection**: 2022 was selected because it provided the most complete in-situ water quality record at Zeke’s Basin within the preceding five years. However, the incomplete record means that the results should be interpreted as representative of the available 2022 observation period rather than a fully continuous annual metabolic budget.
