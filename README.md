@@ -6,7 +6,7 @@
 - Air pressure: Retrieved from Wilmington International Airport (ILM), ~20 mi from study site, via Iowa Environmental Mesonet ASOS-METAR data export system. Notably, historical sea level pressure public data for this study site is sparse; however as a physical driver of water quality this parameter exhibits less spatial variability than wind speed/air temp.
 ## Methods
  
-Net ecosystem metabolism (NEM), gross primary production (Pg), and total respiration (Rt) were calculated using the `ecometab` function from the `SWMPr` R package (called from Python via `rpy2`). `ecometab` implements the Odum open-water method (Odum, 1956). It employs the diel pattern of dissolved oxygen, corrected for air-water gas exchange (via wind speed and barometric pressure) and site-specific solar day length (from latitude/longitude/timezone), to partition net O2 flux into daytime production and nighttime respiration values.
+Net ecosystem metabolism (NEM), gross primary production (Pg), and total respiration (Rt) were calculated using the `ecometab` function from the `SWMPr` R package (called from Python via `rpy2`). `ecometab` (Beck, 2016) implements the Odum open-water method (Odum, 1956). It employs the diel pattern of dissolved oxygen, corrected for air-water gas exchange (via wind speed and barometric pressure) and site-specific solar day length (from latitude/longitude/timezone), to partition net O2 flux into daytime production and nighttime respiration values.
 
 - **Latitude / Longitude**: `33.954680, -77.934807`
 - **Timezone**: `America/New_York`
