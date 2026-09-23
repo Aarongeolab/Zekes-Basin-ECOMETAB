@@ -1,4 +1,4 @@
-### Quantifying Seasonal Ecosystem Metabolism of Zeke’s Island Reserve, North Carolina
+### Quantifying Seasonal Ecosystem Metabolism of Zeke’s Island Estuarine Research Reserve, North Carolina
 
 ### Meteorological Data
  
